@@ -140,13 +140,22 @@ cd system-test-copilot
 2. Install uv (if not already installed):
 ```bash
 # On macOS and Linux
-curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -Ls https://astral.sh/uv/install.sh | bash
 
 # On Windows
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-3. Install dependencies using uv:
+3. Add uv to your PATH (if not already added):
+```bash
+# On macOS and Linux
+setenv PATH "$HOME/.local/bin:$PATH"
+
+# On Windows (add to system PATH or use in PowerShell)
+$env:PATH += ";$env:USERPROFILE\.local\bin"
+```
+
+4. Install dependencies using uv:
 ```bash
 uv sync
 ```
